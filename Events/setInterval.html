@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .child {
+            border: 1px solid red;
+            background-color: antiquewhite;
+            padding: 1.5em;
+            cursor: pointer;
+
+        }
+
+        .childContainer {
+            background-color: rgb(255, 140, 0);
+            border: 1px solid black;
+            padding: 1em;
+            cursor: alias;
+        }
+
+        .container {
+            border: 1px solid blue;
+            background-color: aquamarine;
+            padding: 1em;
+            margin: 2em;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="childContainer">
+            <div class="child">
+                I am a child
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            let val1 = Math.floor(0 + Math.random() * 255);
+            let val2 = Math.floor(0 + Math.random() * 255);
+            let val3 = Math.floor(0 + Math.random() * 255);
+
+            return `rgb(${val1}, ${val2}, ${val3})`;
+        }
+
+
+        setInterval(() => {
+            document.querySelector(".childContainer").style.backgroundColor = getRandomColor();
+        }, 2000);  // here 3000 is in ms i.e. 3sec, after avery 3 sec it will do the given function inside continuously
+
+        let a = setInterval(() => {
+            document.querySelector(".container").style.backgroundColor = getRandomColor();
+        }, 2500);
+        // clearInterval(a); // do this to stop setInterval
+
+        // let b = setTimeout(() => {
+        //     document.querySelector(".childContainer").style.backgroundColor = getRandomColor();
+        // }, 2000);  // insted of infinitely it will run only once
+        // clearTimeout(b);
+    </script>
+</body>
+
+</html>

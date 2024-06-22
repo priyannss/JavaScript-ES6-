@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selector</title>
+
+    <style>
+        body {
+            background-color: #070a13;
+            color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title" class="heading"><strong>DOM</strong> learning</h1>
+        <h2 class="subHeading">Lorem ipsum, dolor sit amet consectetur adipisicing.</h2>
+        <h2 class="subHeading">Lorem ipsum, dolor sit amet consectetur adipisicing.</h2>
+        <h2 class="subHeading">Lorem ipsum, dolor sit amet consectetur adipisicing.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+<script>
+    // +++++++++++++ selecting element by id (getElementById()) ++++++++++++++++++++++++++
+    let title = document.getElementById("title")
+    title.style.backgroundColor = "Thistle";
+    title.style.padding = "1rem";
+    title.style.borderRadius = "2em";
+    title.style.textAlign = "center"
+
+    document.getElementById("title").getAttribute("id")
+    document.getElementById("title").getAttribute("class")
+
+    document.getElementById("title").setAttribute("class", "main-Heading") // it will replace/ override the current class
+    document.getElementById("title").setAttribute("class", "heading main-Heading")
+
+    // remember the difference run it on browser
+    console.log(title.textContent); // it will show all the text present between an element wheather its display none or not
+    console.log(title.innerHTML);  // it will show all the text present between an element along with all the elements present if any, wheather its display none or not
+    console.log(title.innerText); // it will show only the non hidden text
+
+
+    // +++++++++++++ selecting element by class (getElementsByClassName()) ++++++++++++++++++++++++++
+    let heading = document.getElementsByClassName("heading") // it will return a html collection
+    Array.from(heading).forEach((ele)=> (ele.style.color = "red")) // iterating on html collection
+
+    // ++++++++++++++++++++  selecting element by querySelector +++++++++++++++++++++++
+    document.querySelector(".subHeading").style.textTransform = "Uppercase"
+
+    let subHeadings = document.querySelectorAll(".subHeading")  // it returns a node list
+    subHeadings.forEach((ele)=> (ele.style.textDecoration = "Underline"))
+
+    document.querySelector("p").style.color = "orange";
+
+    // +++++++++++++++++++++ firstElementChild / lastElementChild +++++++++++++++++++++++++++++
+    document.querySelector(".container").firstChild;  // first child will consider space as a text
+    document.querySelector(".container").firstElementChild; // it will give only the element as a child
+
+    document.querySelector(".container").lastChild;
+    document.querySelector(".container").lastElementChild;
+
+</script>
+</html>

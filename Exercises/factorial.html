@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fact(num) {
+            if(num <= 1) return 1;
+            let count = 1;
+            for (let i=1; i<= num; i++) {
+                count *= i;
+            }
+
+            return count;
+
+            // if(num <= 1) return 1;
+
+            // return num * fact(num-1);
+        }
+
+        let a = parseInt(prompt("Enter a number: "));
+        console.log(`factorial of ${a} using for loop is ${fact(a)}`);
+        
+        // using reduce method
+        let arr = Array.from(Array(a+1).keys());
+        console.log(arr.slice(1,));
+        
+        let ans = arr.slice(1,).reduce((x,y)=>{
+            return x*y;
+        });
+        
+        console.log(`factorial of ${a} using reduce method is ${ans}`);
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container red bg-green">
+        <div class="box">box</div>
+        <div class="box">box</div>
+        <div class="box">box</div>
+    </div>
+
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "I have been inserted <b>by Priyanshu</b>"
+        div.setAttribute("class", "created");
+        document.querySelector(".container").append(div);
+        // document.querySelector(".container").before(div);
+        // document.querySelector(".container").after(div);
+        // document.querySelector(".container").prepend(div);
+
+
+        let cont = document.querySelector(".box");
+        cont.insertAdjacentHTML("afterend", "<b>I am happy</b>");
+
+        // document.getElementsByClassName("box")[2].remove();
+
+        // className and classList
+        document.querySelector(".container").classList;
+        document.querySelector(".container").className;
+        document.querySelector(".container").classList.add("Priyanshu");
+        // document.querySelector(".container").classList.remove("Priyanshu");
+        document.querySelector(".container").classList.toggle("Priyanshu"); // here toggle will delete the class if it is present and if it is not present then it will add a new class
+    </script>
+</body>
+</html>
